@@ -14,6 +14,21 @@
                     }
                 }
             ]
+        },
+        {
+            "outputFile": "C:\\Users\\wuhan\\Desktop\\IM\\MyIm\\IMLib\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-sr\\values-sr.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\wuhan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2ed584b4ddbe3412dfd1a4aba36a8652\\res\\values-sr\\values-sr.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
         }
     ]
 }

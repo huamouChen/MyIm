@@ -3,12 +3,19 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CallKit/CallKit.iml" filepath="$PROJECT_DIR$/CallKit/CallKit.iml" />
+      <module fileurl="file://C:\Users\wuhan\Desktop\IM\MyIm\CallKit\CallKit.iml" filepath="C:\Users\wuhan\Desktop\IM\MyIm\CallKit\CallKit.iml" />
       <module fileurl="file://$PROJECT_DIR$/CallLib/CallLib.iml" filepath="$PROJECT_DIR$/CallLib/CallLib.iml" />
+      <module fileurl="file://C:\Users\wuhan\Desktop\IM\MyIm\CallLib\CallLib.iml" filepath="C:\Users\wuhan\Desktop\IM\MyIm\CallLib\CallLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/IMKit/IMKit.iml" filepath="$PROJECT_DIR$/IMKit/IMKit.iml" />
+      <module fileurl="file://C:\Users\wuhan\Desktop\IM\MyIm\IMKit\IMKit.iml" filepath="C:\Users\wuhan\Desktop\IM\MyIm\IMKit\IMKit.iml" />
       <module fileurl="file://$PROJECT_DIR$/IMLib/IMLib.iml" filepath="$PROJECT_DIR$/IMLib/IMLib.iml" />
+      <module fileurl="file://C:\Users\wuhan\Desktop\IM\MyIm\IMLib\IMLib.iml" filepath="C:\Users\wuhan\Desktop\IM\MyIm\IMLib\IMLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyIm.iml" filepath="$PROJECT_DIR$/MyIm.iml" />
+      <module fileurl="file://C:\Users\wuhan\Desktop\IM\MyIm\MyIm.iml" filepath="C:\Users\wuhan\Desktop\IM\MyIm\MyIm.iml" />
       <module fileurl="file://$PROJECT_DIR$/RedPacket/RedPacket.iml" filepath="$PROJECT_DIR$/RedPacket/RedPacket.iml" />
+      <module fileurl="file://C:\Users\wuhan\Desktop\IM\MyIm\RedPacket\RedPacket.iml" filepath="C:\Users\wuhan\Desktop\IM\MyIm\RedPacket\RedPacket.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\wuhan\Desktop\IM\MyIm\app\app.iml" filepath="C:\Users\wuhan\Desktop\IM\MyIm\app\app.iml" />
     </modules>
   </component>
 </project>

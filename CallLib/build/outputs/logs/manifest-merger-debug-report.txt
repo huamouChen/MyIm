@@ -1,39 +1,39 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml:1:1-13:12
-INJECTED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml:1:1-13:12
-INJECTED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml:1:1-13:12
-INJECTED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml:1:1-13:12
-INJECTED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml:1:1-13:12
-INJECTED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml:1:1-13:12
-INJECTED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml:1:1-13:12
+ADDED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml:1:1-13:12
+INJECTED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml:1:1-13:12
+INJECTED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml:1:1-13:12
+INJECTED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml:1:1-13:12
+INJECTED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml:1:1-13:12
+INJECTED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml:1:1-13:12
+INJECTED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml:1:1-13:12
 	package
-		ADDED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml:2:5-30
-		INJECTED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml
-		INJECTED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml
+		ADDED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml:2:5-30
+		INJECTED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml
+		INJECTED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml
 	android:versionName
-		INJECTED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml
-		ADDED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml:1:1-13:12
-		INJECTED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml
+		INJECTED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml
+		ADDED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml:1:1-13:12
+		INJECTED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml
 	android:versionCode
-		INJECTED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml
-		ADDED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml:1:1-13:12
-		INJECTED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml
+		INJECTED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml
+		ADDED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml:1:1-13:12
+		INJECTED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml
 	xmlns:android
-		ADDED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml:1:11-69
+		ADDED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml:1:11-69
 uses-sdk
-ADDED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml:4:5-6:41
-INJECTED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml:4:5-6:41
-INJECTED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml:4:5-6:41
-INJECTED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml:4:5-6:41
-INJECTED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml:4:5-6:41
+ADDED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml:4:5-6:41
+INJECTED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml:4:5-6:41
+INJECTED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml:4:5-6:41
+INJECTED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml:4:5-6:41
+INJECTED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml:4:5-6:41
 	android:targetSdkVersion
-		ADDED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml:6:9-38
-		INJECTED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml
-		INJECTED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml
+		ADDED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml:6:9-38
+		INJECTED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml
+		INJECTED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml:5:9-35
-		INJECTED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml
-		INJECTED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml
+		ADDED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml:5:9-35
+		INJECTED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml
+		INJECTED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml
 application
-ADDED from E:\androidProject\MyIm\CallLib\AndroidManifest.xml:8:5-11:19
+ADDED from C:\Users\wuhan\Desktop\IM\MyIm\CallLib\AndroidManifest.xml:8:5-11:19
