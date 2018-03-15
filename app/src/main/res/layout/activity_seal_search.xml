@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_search_title_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ac_iv_search_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="60dp"
+                android:src="@mipmap/ac_search_loading"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/ac_ll_filter_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ac_ll_filtered_friend_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/ac_search_list_view_item"
+                        android:text="@string/ac_search_friend" />
+
+                    <View style="@style/ac_search_list_view_divider" />
+
+                    <com.example.rexchen.myim.server.widget.NestedListView
+                        android:id="@+id/ac_lv_filtered_friends_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:id="@+id/ac_ll_more_friends"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="#ffffff"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="14dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:src="@mipmap/ac_search_blue_icon" />
+
+                        <TextView
+                            style="@style/ac_search_list_view_item_more"
+                            android:text="@string/ac_search_more_friend" />
+                    </LinearLayout>
+
+                    <View style="@style/ac_search_part_divider_high" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ac_ll_filtered_group_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/ac_search_list_view_item"
+                        android:text="@string/ac_search_group" />
+
+                    <View style="@style/ac_search_list_view_divider" />
+
+                    <cn.rongcloud.im.ui.widget.NestedListView
+                        android:id="@+id/ac_lv_filtered_groups_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:id="@+id/ac_ll_more_groups"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="#ffffff"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="14dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:src="@mipmap/ac_search_blue_icon" />
+
+                        <TextView
+                            style="@style/ac_search_list_view_item_more"
+                            android:text="@string/ac_search_more_group" />
+                    </LinearLayout>
+
+                    <View style="@style/ac_search_part_divider_high" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ac_ll_filtered_chatting_records_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/ac_search_list_view_item"
+                        android:text="@string/ac_search_chatting_records" />
+
+                    <View style="@style/ac_search_list_view_divider" />
+
+                    <cn.rongcloud.im.ui.widget.NestedListView
+                        android:id="@+id/ac_lv_filtered_chatting_records_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:id="@+id/ac_ll_more_chatting_records"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="#ffffff"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="14dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:src="@mipmap/ac_search_blue_icon" />
+
+                        <TextView
+                            style="@style/ac_search_list_view_item_more"
+                            android:text="@string/ac_search_more_chatting_records" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/ac_tv_search_no_results"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="45dp"
+                    android:ellipsize="middle"
+                    android:maxLines="1"
+                    android:textColor="#999999"
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

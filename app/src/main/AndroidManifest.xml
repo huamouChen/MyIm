@@ -8,12 +8,22 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:theme="@style/MyTheme" >
+        android:theme="@style/MyTheme">
 
         <!--主界面-->
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan">
             <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
+                <data
+                    android:host="cn.rongcloud.im"
+                    android:pathPrefix="/push_message"
+                    android:scheme="rong" />
             </intent-filter>
         </activity>
 
@@ -42,6 +52,11 @@
         <!--重置密码界面-->
         <activity
             android:name=".ui.activity.ForgetPasswordActivity"
+            android:screenOrientation="portrait" />
+
+        <!--新的朋友列表-->
+        <activity
+            android:name=".ui.activity.NewFriendListActivity"
             android:screenOrientation="portrait" />
 
 

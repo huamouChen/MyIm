@@ -19,14 +19,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.rexchen.myim.MainActivity;
 import com.example.rexchen.myim.R;
 import com.example.rexchen.myim.SealConst;
 import com.example.rexchen.myim.server.network.http.HttpException;
 import com.example.rexchen.myim.server.response.GetTokenResponse;
 import com.example.rexchen.myim.server.response.GetUserInfoByIdResponse;
 import com.example.rexchen.myim.server.response.LoginResponse;
-import com.example.rexchen.myim.server.utils.AMUtils;
 import com.example.rexchen.myim.server.utils.CommonUtils;
 import com.example.rexchen.myim.server.utils.NLog;
 import com.example.rexchen.myim.server.utils.NToast;

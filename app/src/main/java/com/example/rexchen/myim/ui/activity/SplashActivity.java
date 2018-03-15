@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Window;
 
-import com.example.rexchen.myim.MainActivity;
 import com.example.rexchen.myim.R;
 import com.example.rexchen.myim.SealAppContext;
 
