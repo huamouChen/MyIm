@@ -51,7 +51,7 @@
                 android:orientation="horizontal">
 
 
-                <cn.rongcloud.im.server.widget.ClearWriteEditText
+                <com.example.rexchen.myim.server.widget.ClearWriteEditText
                     android:id="@+id/de_login_phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
                 android:orientation="horizontal">
 
 
-                <cn.rongcloud.im.server.widget.ClearWriteEditText
+                <com.example.rexchen.myim.server.widget.ClearWriteEditText
                     android:id="@+id/de_login_password"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -141,19 +141,18 @@
         android:padding="15dp"
         android:layout_alignParentBottom="true"
         android:text="@string/forgot_password"
-        android:visibility="gone"/>
+        />
 
     <!--power by-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Powered by RongCloud"
+        android:text="Powered by RexChen"
         android:textSize="12sp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:padding="15dp"
         android:textColor="#484848"
-        android:visibility="gone"
         />
 
     <!--新用户-->
@@ -167,6 +166,6 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:text="@string/new_user"
-        android:visibility="gone"/>
+        />
 
 </RelativeLayout>

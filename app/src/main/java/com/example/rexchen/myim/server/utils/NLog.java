@@ -1,15 +1,13 @@
-/*
-    ShengDao Android Client, NLog
-    Copyright (c) 2014 ShengDao Tech Company Limited
- */
-
 package com.example.rexchen.myim.server.utils;
 
 import android.util.Log;
 
+/**
+ * Created by Rex on 2018/3/15.
+ * Email chenhm4444@gmail.com
+ */
 
 public class NLog {
-
     private static final String LOG_FORMAT = "%1$s\n%2$s";
     private static boolean isDebug = false;
 
@@ -63,5 +61,4 @@ public class NLog {
     public static void setDebug(boolean isDebug) {
         NLog.isDebug = isDebug;
     }
-
 }
