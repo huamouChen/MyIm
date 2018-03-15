@@ -7,16 +7,21 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import com.example.rexchen.myim.R;
+import com.example.rexchen.myim.server.SealAction;
+import com.example.rexchen.myim.server.network.async.AsyncTaskManager;
 import com.example.rexchen.myim.server.network.async.OnDataListener;
 import com.example.rexchen.myim.server.network.http.HttpException;
+import com.example.rexchen.myim.server.utils.NToast;
 
 /**
  * Created by Rex on 2018/3/15.
@@ -26,6 +31,8 @@ import com.example.rexchen.myim.server.network.http.HttpException;
 public class BaseActivity extends FragmentActivity implements OnDataListener {
 
     protected Context mContext;
+    public AsyncTaskManager mAsyncTaskManager;
+    protected SealAction action;
 
 
     private ViewFlipper mContentView;
@@ -54,7 +61,9 @@ public class BaseActivity extends FragmentActivity implements OnDataListener {
         mBtnBackDrawable.setBounds(0, 0, mBtnBackDrawable.getMinimumWidth(),
                 mBtnBackDrawable.getMinimumHeight());
 
-
+        mAsyncTaskManager = AsyncTaskManager.getInstance(getApplicationContext());
+        // Activity管理
+        action = new SealAction(mContext);
     }
 
     @Override
@@ -80,8 +89,156 @@ public class BaseActivity extends FragmentActivity implements OnDataListener {
     }
 
 
+    /**
+     * 设置左边是否可见
+     *
+     * @param visibility
+     */
+    public void setHeadLeftButtonVisibility(int visibility) {
+        mBtnLeft.setVisibility(visibility);
+    }
+
+    /**
+     * 设置右边是否可见
+     *
+     * @param visibility
+     */
+    public void setHeadRightButtonVisibility(int visibility) {
+        mBtnRight.setVisibility(visibility);
+    }
+
+    /**
+     * 设置标题
+     */
+    public void setTitle(int titleId) {
+        setTitle(getString(titleId), false);
+    }
+
+    /**
+     * 设置标题
+     */
+    public void setTitle(int titleId, boolean flag) {
+        setTitle(getString(titleId), flag);
+    }
+
+    /**
+     * 设置标题
+     */
+    public void setTitle(String title) {
+        setTitle(title, false);
+    }
+
+    /**
+     * 设置标题
+     *
+     * @param title
+     */
+    public void setTitle(String title, boolean flag) {
+        mTitle.setText(title);
+        if (flag) {
+            mBtnLeft.setCompoundDrawables(null, null, null, null);
+        } else {
+            mBtnLeft.setCompoundDrawables(mBtnBackDrawable, null, null, null);
+        }
+    }
+
+    /**
+     * 点击左按钮
+     */
+    public void onHeadLeftButtonClick(View v) {
+        finish();
+    }
+
+    /**
+     * 点击右按钮
+     */
+    public void onHeadRightButtonClick(View v) {
+
+    }
+
+    public Button getHeadLeftButton() {
+        return mBtnLeft;
+    }
+
+    public void setHeadLeftButton(Button leftButton) {
+        this.mBtnLeft = leftButton;
+    }
+
+    public Button getHeadRightButton() {
+        return mBtnRight;
+    }
+
+    public void setHeadRightButton(Button rightButton) {
+        this.mBtnRight = rightButton;
+    }
+
+    public Drawable getHeadBackButtonDrawable() {
+        return mBtnBackDrawable;
+    }
+
+    public void setBackButtonDrawable(Drawable backButtonDrawable) {
+        this.mBtnBackDrawable = backButtonDrawable;
+    }
+
+    protected void onResume() {
+        super.onResume();
+        // 友盟统计
+//        MobclickAgent.onResume(this);
+    }
+
+    protected void onPause() {
+        super.onPause();
+        // 友盟统计
+//        MobclickAgent.onPause(this);
+    }
+
+
+    /**
+     * 发送请求（需要检查网络）
+     *
+     * @param requestCode 请求码
+     */
+    public void request(int requestCode) {
+        if (mAsyncTaskManager != null) {
+            mAsyncTaskManager.request(requestCode, this);
+        }
+    }
+
+    /**
+     * 发送请求（需要检查网络）
+     *
+     * @param id          请求数据的用户ID或者groupID
+     * @param requestCode 请求码
+     */
+    public void request(String id, int requestCode) {
+        if (mAsyncTaskManager != null) {
+            mAsyncTaskManager.request(id, requestCode, this);
+        }
+    }
+
+    /**
+     * 发送请求
+     *
+     * @param requestCode    请求码
+     * @param isCheckNetwork 是否需检查网络，true检查，false不检查
+     */
+    public void request(int requestCode, boolean isCheckNetwork) {
+        if (mAsyncTaskManager != null) {
+            mAsyncTaskManager.request(requestCode, isCheckNetwork, this);
+        }
+    }
+
+    /**
+     * 取消所有请求
+     */
+    public void cancelRequest() {
+        if (mAsyncTaskManager != null) {
+            mAsyncTaskManager.cancelRequest();
+        }
+    }
+
     @Override
-    public Object doInBackground(int requestCode, String parameter) throws HttpException {
+    public Object doInBackground(int requestCode, String id) throws HttpException {
         return null;
     }
 
@@ -92,6 +249,35 @@ public class BaseActivity extends FragmentActivity implements OnDataListener {
 
     @Override
     public void onFailure(int requestCode, int state, Object result) {
+        switch (state) {
+            // 网络不可用给出提示
+            case AsyncTaskManager.HTTP_NULL_CODE:
+                NToast.shortToast(mContext, "当前网络不可用");
+                break;
 
+            // 网络有问题给出提示
+            case AsyncTaskManager.HTTP_ERROR_CODE:
+                NToast.shortToast(mContext, "网络问题请稍后重试");
+                break;
+
+            // 请求有问题给出提示
+            case AsyncTaskManager.REQUEST_ERROR_CODE:
+                // NToast.shortToast(mContext, R.string.common_request_error);
+                break;
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        if (null != this.getCurrentFocus() && event.getAction() == MotionEvent.ACTION_UP) {
+            InputMethodManager mInputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            return mInputMethodManager.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(), 0);
+        }
+        return super.onTouchEvent(event);
     }
 }

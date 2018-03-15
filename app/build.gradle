@@ -26,6 +26,7 @@ android {
             jniLibs.srcDirs = ['libs']
         }
     }
+    useLibrary 'org.apache.http.legacy'
 }
 
 dependencies {
@@ -36,6 +37,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    compile 'com.alibaba:fastjson:1.2.46'
 
     compile 'com.android.support:multidex:1.0.3'
     compile 'com.facebook.stetho:stetho:1.4.1'
