@@ -45,4 +45,7 @@ dependencies {
     compile project(':IMKit')
     compile project(':CallKit')
     compile project(':RedPacket')
+
 }
+
+

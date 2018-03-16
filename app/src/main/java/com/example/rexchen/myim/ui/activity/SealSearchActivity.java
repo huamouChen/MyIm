@@ -32,8 +32,18 @@ import android.widget.TextView;
 import com.example.rexchen.myim.App;
 import com.example.rexchen.myim.R;
 import com.example.rexchen.myim.SealConst;
+import com.example.rexchen.myim.SealUserInfoManager;
+import com.example.rexchen.myim.db.DBManager;
 import com.example.rexchen.myim.db.Friend;
-import com.example.rexchen.myim.server.utils.CommonUtils;
+import com.example.rexchen.myim.db.FriendDao;
+import com.example.rexchen.myim.db.GroupMember;
+import com.example.rexchen.myim.db.GroupMemberDao;
+import com.example.rexchen.myim.db.Groups;
+import com.example.rexchen.myim.db.GroupsDao;
+import com.example.rexchen.myim.model.SealSearchConversationResult;
+import com.example.rexchen.myim.model.SearchResult;
+import com.example.rexchen.myim.server.pinyin.CharacterParser;
+
 import com.example.rexchen.myim.server.widget.SelectableRoundedImageView;
 
 import java.util.ArrayList;
@@ -45,14 +55,19 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 
+import de.greenrobot.dao.query.QueryBuilder;
 import io.rong.imageloader.core.ImageLoader;
 import io.rong.imkit.RongIM;
-import io.rong.imkit.tools.CharacterParser;
+
 import io.rong.imkit.userInfoCache.RongUserInfoManager;
 import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.Conversation;
+
 import io.rong.imlib.model.SearchConversationResult;
 import io.rong.imlib.model.UserInfo;
+
+import com.example.rexchen.myim.utils.CommonUtils;
+
 
 /**
  * Created by tiankui on 16/8/31.
@@ -84,7 +99,7 @@ public class SealSearchActivity extends Activity {
     private List<SearchConversationResult> mSearchConversationResultsList;
     private ArrayList<SearchConversationResult> mSearchConversationResultsArrayList;
 
-//    private static final String SQL_DISTINCT_GROUP_ID = "SELECT DISTINCT " + GroupMemberDao.Properties.GroupId.columnName + " FROM " + GroupMemberDao.TABLENAME;
+    private static final String SQL_DISTINCT_GROUP_ID = "SELECT DISTINCT " + GroupMemberDao.Properties.GroupId.columnName + " FROM " + GroupMemberDao.TABLENAME;
 
 
     @Override
@@ -97,18 +112,18 @@ public class SealSearchActivity extends Activity {
     }
 
     private void initView() {
-        mSearchEditText = (EditText) findViewById(R.id.ac_et_search);
-        mFriendListLinearLayout = (LinearLayout) findViewById(R.id.ac_ll_filtered_friend_list);
-        mFriendListView = (ListView) findViewById(R.id.ac_lv_filtered_friends_list);
-        mMoreFriendLinearLayout = (LinearLayout) findViewById(R.id.ac_ll_more_friends);
-        mGroupListLinearLayout = (LinearLayout) findViewById(R.id.ac_ll_filtered_group_list);
-        mGroupsListView = (ListView) findViewById(R.id.ac_lv_filtered_groups_list);
-        mMoreGroupsLinearLayout = (LinearLayout) findViewById(R.id.ac_ll_more_groups);
-        mSearchNoResultsTextView = (TextView) findViewById(R.id.ac_tv_search_no_results);
-        mPressBackImageView = (ImageView) findViewById(R.id.ac_iv_press_back);
-        mChattingRecordsLinearLayout = (LinearLayout) findViewById(R.id.ac_ll_filtered_chatting_records_list);
-        mMoreChattingRecordsLinearLayout = (LinearLayout) findViewById(R.id.ac_ll_more_chatting_records);
-        mChattingRecordsListView = (ListView) findViewById(R.id.ac_lv_filtered_chatting_records_list);
+        mSearchEditText = findViewById(R.id.ac_et_search);
+        mFriendListLinearLayout = findViewById(R.id.ac_ll_filtered_friend_list);
+        mFriendListView = findViewById(R.id.ac_lv_filtered_friends_list);
+        mMoreFriendLinearLayout = findViewById(R.id.ac_ll_more_friends);
+        mGroupListLinearLayout = findViewById(R.id.ac_ll_filtered_group_list);
+        mGroupsListView = findViewById(R.id.ac_lv_filtered_groups_list);
+        mMoreGroupsLinearLayout = findViewById(R.id.ac_ll_more_groups);
+        mSearchNoResultsTextView = findViewById(R.id.ac_tv_search_no_results);
+        mPressBackImageView = findViewById(R.id.ac_iv_press_back);
+        mChattingRecordsLinearLayout = findViewById(R.id.ac_ll_filtered_chatting_records_list);
+        mMoreChattingRecordsLinearLayout = findViewById(R.id.ac_ll_more_chatting_records);
+        mChattingRecordsListView = findViewById(R.id.ac_lv_filtered_chatting_records_list);
 
         mFriendListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -495,11 +510,11 @@ public class SealSearchActivity extends Activity {
             if (convertView == null) {
                 viewHolder = new ViewHolder();
                 convertView = View.inflate(SealSearchActivity.this, R.layout.item_filter_friend_list, null);
-                viewHolder.portraitImageView = (SelectableRoundedImageView) convertView.findViewById(R.id.item_aiv_friend_image);
-                viewHolder.nameDisplayNameLinearLayout = (LinearLayout) convertView.findViewById(R.id.item_ll_friend_name);
-                viewHolder.displayNameTextView = (TextView) convertView.findViewById(R.id.item_tv_friend_display_name);
-                viewHolder.nameTextView = (TextView) convertView.findViewById(R.id.item_tv_friend_name);
-                viewHolder.nameSingleTextView = (TextView) convertView.findViewById(R.id.item_tv_friend_name_single);
+                viewHolder.portraitImageView = convertView.findViewById(R.id.item_aiv_friend_image);
+                viewHolder.nameDisplayNameLinearLayout = convertView.findViewById(R.id.item_ll_friend_name);
+                viewHolder.displayNameTextView = convertView.findViewById(R.id.item_tv_friend_display_name);
+                viewHolder.nameTextView = convertView.findViewById(R.id.item_tv_friend_name);
+                viewHolder.nameSingleTextView = convertView.findViewById(R.id.item_tv_friend_name_single);
                 convertView.setTag(viewHolder);
             } else {
                 viewHolder = (ViewHolder) convertView.getTag();

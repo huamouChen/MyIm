@@ -2,6 +2,7 @@ package com.example.rexchen.myim;
 
 import android.app.Application;
 
+import io.rong.imageloader.core.DisplayImageOptions;
 import io.rong.imkit.RongIM;
 
 /**
@@ -10,11 +11,17 @@ import io.rong.imkit.RongIM;
 
 public class App extends Application {
 
+    private static DisplayImageOptions options;
+
     @Override
     public void onCreate() {
         super.onCreate();
 
         // 初始化融云
         RongIM.init(this);
+    }
+
+    public static DisplayImageOptions getOptions() {
+        return options;
     }
 }
