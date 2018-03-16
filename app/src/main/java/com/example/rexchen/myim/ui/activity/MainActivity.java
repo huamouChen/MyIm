@@ -386,4 +386,12 @@ public class MainActivity extends FragmentActivity implements ViewPager.OnPageCh
     public void onCountChanged(int i) {
 
     }
+
+    @Override
+    protected void onDestroy() {
+        RongIM.getInstance().removeUnReadMessageCountChangedObserver(this);
+        if (mHomeKeyReceiver != null)
+            this.unregisterReceiver(mHomeKeyReceiver);
+        super.onDestroy();
+    }
 }
