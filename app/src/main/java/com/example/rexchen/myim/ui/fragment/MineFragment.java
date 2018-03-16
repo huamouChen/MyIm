@@ -20,7 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.rexchen.myim.App;
-import com.example.rexchen.myim.R;
+
 import com.example.rexchen.myim.SealConst;
 import com.example.rexchen.myim.SealUserInfoManager;
 import com.example.rexchen.myim.server.SealAction;
@@ -30,6 +30,8 @@ import com.example.rexchen.myim.server.network.async.OnDataListener;
 import com.example.rexchen.myim.server.network.http.HttpException;
 import com.example.rexchen.myim.server.response.VersionResponse;
 import com.example.rexchen.myim.server.widget.SelectableRoundedImageView;
+import com.example.rexchen.myim.ui.activity.AboutRongCloudActivity;
+import com.example.rexchen.myim.ui.activity.AccountSettingActivity;
 import com.example.rexchen.myim.ui.activity.MyAccountActivity;
 import com.jrmf360.rylib.JrmfClient;
 
@@ -37,6 +39,7 @@ import io.rong.imageloader.core.ImageLoader;
 import io.rong.imkit.RongIM;
 import io.rong.imlib.model.CSCustomServiceInfo;
 import io.rong.imlib.model.UserInfo;
+import com.example.rexchen.myim.R;
 
 /**
  * Created by Rex on 2018/3/15.

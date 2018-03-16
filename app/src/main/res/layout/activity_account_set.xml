@@ -134,7 +134,7 @@
                 android:textColor="@color/text_color"
                 android:textSize="16sp" />
 
-            <cn.rongcloud.im.ui.widget.switchbutton.SwitchButton
+            <com.example.rexchen.myim.ui.widget.switchbtn.SwitchButton
                 android:id="@+id/switch_push_language"
                 style="@style/SwitchButtonStyle"
                 android:layout_width="wrap_content"
@@ -144,7 +144,7 @@
                 app:kswAnimationDuration="300"
                 app:kswBackDrawable="@drawable/ios_back_drawable"
                 app:kswBackMeasureRatio="1.4"
-                app:kswThumbDrawable="@drawable/ios_thumb"
+                app:kswThumbDrawable="@mipmap/ios_thumb"
                 app:kswThumbMarginBottom="-8dp"
                 app:kswThumbMarginLeft="-5dp"
                 app:kswThumbMarginRight="-5dp"
@@ -169,7 +169,7 @@
                 android:textColor="@color/text_color"
                 android:textSize="16sp" />
 
-            <cn.rongcloud.im.ui.widget.switchbutton.SwitchButton
+            <com.example.rexchen.myim.ui.widget.switchbtn.SwitchButton
                 android:id="@+id/switch_push_detail"
                 style="@style/SwitchButtonStyle"
                 android:layout_width="wrap_content"
@@ -179,7 +179,7 @@
                 app:kswAnimationDuration="300"
                 app:kswBackDrawable="@drawable/ios_back_drawable"
                 app:kswBackMeasureRatio="1.4"
-                app:kswThumbDrawable="@drawable/ios_thumb"
+                app:kswThumbDrawable="@mipmap/ios_thumb"
                 app:kswThumbMarginBottom="-8dp"
                 app:kswThumbMarginLeft="-5dp"
                 app:kswThumbMarginRight="-5dp"
@@ -204,7 +204,7 @@
                 android:textColor="@color/text_color"
                 android:textSize="16sp" />
 
-            <cn.rongcloud.im.ui.widget.switchbutton.SwitchButton
+            <com.example.rexchen.myim.ui.widget.switchbtn.SwitchButton
                 android:id="@+id/switch_push_receive"
                 style="@style/SwitchButtonStyle"
                 android:layout_width="wrap_content"
@@ -214,7 +214,7 @@
                 app:kswAnimationDuration="300"
                 app:kswBackDrawable="@drawable/ios_back_drawable"
                 app:kswBackMeasureRatio="1.4"
-                app:kswThumbDrawable="@drawable/ios_thumb"
+                app:kswThumbDrawable="@mipmap/ios_thumb"
                 app:kswThumbMarginBottom="-8dp"
                 app:kswThumbMarginLeft="-5dp"
                 app:kswThumbMarginRight="-5dp"

@@ -59,6 +59,19 @@
             android:name=".ui.activity.NewFriendListActivity"
             android:screenOrientation="portrait" />
 
+        <!--我的账号-->
+        <activity
+            android:name=".ui.activity.MyAccountActivity"
+            android:screenOrientation="portrait" />
+        <!--z账号设置-->
+        <activity
+            android:name=".ui.activity.AccountSettingActivity"
+            android:screenOrientation="portrait" />
+        <!--关于界面-->
+        <activity
+            android:name=".ui.activity.AboutRongCloudActivity"
+            android:screenOrientation="portrait" />
+
 
         <!--高德地图-->
         <meta-data
