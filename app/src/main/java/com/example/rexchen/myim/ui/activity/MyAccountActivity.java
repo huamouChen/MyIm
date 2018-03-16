@@ -3,7 +3,7 @@ package com.example.rexchen.myim.ui.activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.example.rexchen.myim.R;
+
 
 /**
  * Created by Rex on 2018/3/16.
